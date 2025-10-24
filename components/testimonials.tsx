@@ -2,20 +2,20 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Kwame Asante",
-    company: "TechStart Ghana",
+    name: "Diamond",
+    company: "Heera Logistics",
     text: "WonderTech transformed our business with an incredible web platform. Their team is professional, innovative, and truly understands our vision.",
     rating: 5,
   },
   {
-    name: "Ama Osei",
-    company: "Digital Solutions Ltd",
+    name: "Sophia",
+    company: "S&M Ushering Services",
     text: "Outstanding service from start to finish. The attention to detail and commitment to excellence is unmatched. Highly recommended!",
     rating: 5,
   },
   {
-    name: "Kofi Mensah",
-    company: "Innovation Hub",
+    name: "Edward",
+    company: "Study Agora",
     text: "Working with WonderTech was a game-changer for our company. They delivered beyond expectations and continue to support us.",
     rating: 5,
   },

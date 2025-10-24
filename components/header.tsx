@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 
@@ -10,9 +11,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">W</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 relative">
+            <Image
+              src="/wondertechLogo-transparent.png"
+              alt="WonderTech Innovations Logo"
+              fill
+              className="object-contain"
+            />
           </div>
           <div className="hidden sm:block">
             <p className="font-bold text-foreground">WonderTech</p>

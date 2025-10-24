@@ -1,17 +1,18 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { Code2, Smartphone, Palette, Shield, Zap, BarChart3, Lock, Headphones } from "lucide-react"
+import Image from "next/image"
+import { Zap, BarChart3, Lock, Headphones } from "lucide-react"
 
 export default function Services() {
   const mainServices = [
     {
-      icon: Code2,
+      image: "/web-dev.png",
       title: "Custom Web Development",
       description: "Scalable, high-performance web applications built with modern technologies and best practices.",
       features: ["Full-stack development", "Progressive Web Apps", "E-commerce solutions", "Real-time applications"],
     },
     {
-      icon: Smartphone,
+      image: "/mobile.png",
       title: "Mobile App Development",
       description: "Native and cross-platform mobile solutions that engage users and drive business results.",
       features: [
@@ -22,13 +23,13 @@ export default function Services() {
       ],
     },
     {
-      icon: Palette,
+      image: "/ui.png",
       title: "UI/UX Design",
       description: "Beautiful, intuitive interfaces designed with user experience at the core of every decision.",
       features: ["User research & testing", "Wireframing & prototyping", "Visual design", "Design systems"],
     },
     {
-      icon: Shield,
+      image: "/itsupport.png",
       title: "IT Consulting & Support",
       description: "Strategic guidance and ongoing support to optimize your technology infrastructure and operations.",
       features: ["Technology strategy", "Infrastructure planning", "Security audits", "24/7 support"],
@@ -79,17 +80,11 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
             {mainServices.map((service, index) => {
-              const Icon = service.icon
               const isEven = index % 2 === 0
               return (
                 <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
                   <div className={isEven ? "order-1" : "order-2"}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
-                        <Icon className="text-primary-foreground" size={32} />
-                      </div>
-                      <h2 className="text-3xl font-bold">{service.title}</h2>
-                    </div>
+                    <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
                     <p className="text-lg text-muted-foreground mb-6">{service.description}</p>
                     <div className="space-y-3">
                       <p className="font-semibold text-foreground">Key Features:</p>
@@ -106,9 +101,13 @@ export default function Services() {
                   <div className={`relative ${isEven ? "order-2" : "order-1"}`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-2xl"></div>
                     <div className="relative bg-card border border-border rounded-2xl p-8 h-80 flex items-center justify-center">
-                      <div className="text-center">
-                        <Icon className="text-primary/20 mx-auto mb-4" size={80} />
-                        <p className="text-muted-foreground">{service.title}</p>
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-contain"
+                        />
                       </div>
                     </div>
                   </div>

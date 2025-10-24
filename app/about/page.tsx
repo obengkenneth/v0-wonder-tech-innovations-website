@@ -73,7 +73,7 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-muted-foreground mb-4">
-                Founded in 2020, WonderTech Innovations started with a simple mission: to empower businesses through
+                Founded in 2022, WonderTech Innovations started with a simple mission: to empower businesses through
                 innovative software solutions. What began as a small team of passionate developers has grown into a
                 dynamic company serving clients across multiple industries.
               </p>
@@ -96,8 +96,8 @@ export default function About() {
                       <span className="text-2xl">🚀</span>
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-2">Fast Growth</h3>
-                      <p className="text-muted-foreground text-sm">From 3 to 15+ team members in just 5 years</p>
+                      <h3 className="font-semibold mb-2">Quick Delivery</h3>
+                      <p className="text-muted-foreground text-sm">Rapid project delivery with agile methodologies and efficient workflows</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -109,7 +109,7 @@ export default function About() {
                       <p className="text-muted-foreground text-sm">Serving clients across Africa, Europe, and beyond</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
+                  {/* <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <span className="text-2xl">⭐</span>
                     </div>
@@ -117,7 +117,7 @@ export default function About() {
                       <h3 className="font-semibold mb-2">Award Winning</h3>
                       <p className="text-muted-foreground text-sm">Recognized for innovation and excellence</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -155,8 +155,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-background">
+      {/* Team Section - Commented out for now */}
+      {/* <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
@@ -181,7 +181,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </main>

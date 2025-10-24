@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react"
 
 export default function Footer() {
@@ -8,9 +9,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-accent to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-foreground font-bold">W</span>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 relative">
+                <Image
+                  src="/wondertechLogo-transparent.png"
+                  alt="WonderTech Innovations Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <p className="font-bold">WonderTech</p>
@@ -92,19 +98,19 @@ export default function Footer() {
               <li className="flex items-center gap-2">
                 <Mail size={16} />
                 <a
-                  href="mailto:info@wondertech.com"
+                  href="mailto:wondertechinnovations@gmail.com"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
-                  info@wondertech.com
+                  wondertechinnovations@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} />
                 <a
-                  href="tel:+233123456789"
+                  href="tel:+233594159131"
                   className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
-                  +233 (0) 123 456 789
+                  +233 (0) 594159131
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -117,8 +123,10 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row items-center justify-between">
-          <p className="text-sm text-primary-foreground/70">© 2025 WonderTech Innovations. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 sm:mt-0">
+          <p className="text-sm text-primary-foreground/70">
+            © {new Date().getFullYear()} WonderTech Innovations. All rights reserved.
+          </p>
+          {/* <div className="flex gap-4 mt-4 sm:mt-0">
             <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               <Linkedin size={20} />
             </a>
@@ -128,7 +136,7 @@ export default function Footer() {
             <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               <Github size={20} />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

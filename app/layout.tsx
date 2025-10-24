@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description:
     "Empowering businesses through innovative software solutions. Custom web & mobile app development, UI/UX design, and IT consulting.",
   generator: "v0.app",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 }
 
 export default function RootLayout({

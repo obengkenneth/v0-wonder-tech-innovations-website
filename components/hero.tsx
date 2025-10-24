@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
 export default function Hero() {
@@ -10,8 +11,14 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <div className="mb-8 animate-float animate-fade-in-up">
-          <div className="inline-block w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-lg">
-            <span className="text-4xl">🚀</span>
+          <div className="inline-flex w-24 h-24 bg-white rounded-2xl items-center justify-center shadow-lg p-2">
+            <Image
+              src="/wondertech-logo.jpeg"
+              alt="WonderTech Innovations Logo"
+              width={80}
+              height={80}
+              className="object-contain"
+            />
           </div>
         </div>
 
@@ -49,7 +56,7 @@ export default function Hero() {
             <p className="text-muted-foreground">Clients</p>
           </div>
           <div className="p-3 bg-card rounded-lg border border-border hover:border-primary hover:shadow-md transition-all animate-scale-in animate-stagger-3">
-            <p className="font-semibold text-primary">5+</p>
+            <p className="font-semibold text-primary">3+</p>
             <p className="text-muted-foreground">Years</p>
           </div>
         </div>

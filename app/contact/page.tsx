@@ -16,6 +16,8 @@ export default function Contact() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -25,27 +27,48 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-    setTimeout(() => setSubmitted(false), 5000)
+    setIsLoading(true)
+    setError("")
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        const errorData = await response.json()
+        setError(errorData.error || "Failed to send message. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error sending email:", error)
+      setError("Failed to send message. Please try again or contact us directly.")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "info@wondertech.com",
-      link: "mailto:info@wondertech.com",
+      value: "wondertechinnovations@gmail.com",
+      link: "mailto:wondertechinnovations@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+233 (0) 123 456 789",
-      link: "tel:+233123456789",
+      value: "+233 (0) 594159131",
+      link: "tel:+233594159131",
     },
     {
       icon: MapPin,
@@ -56,7 +79,7 @@ export default function Contact() {
     {
       icon: Clock,
       title: "Business Hours",
-      value: "Mon - Fri: 9:00 AM - 6:00 PM",
+      value: "6:00 AM - 8:00 PM",
       link: "#",
     },
   ]
@@ -114,6 +137,12 @@ export default function Contact() {
             {submitted && (
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-green-800 font-semibold">Thank you for your message! We'll be in touch soon.</p>
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 font-semibold">{error}</p>
               </div>
             )}
 
@@ -206,9 +235,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg"
+                disabled={isLoading}
+                className="w-full px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
