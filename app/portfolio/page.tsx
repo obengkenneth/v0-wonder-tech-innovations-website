@@ -11,7 +11,7 @@ export default function Portfolio() {
       category: "Web Development",
       description: "Client-facing application for drivers and potential leads for a logistics company. Features vehicle financing, fleet tracking, and transparent payment systems.",
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-      image: "/heera-web.png",
+      image: "/heera-web.png" ,
       url: "https://heeralogistics.com/",
       results: ["Professional client portal", "Lead generation system", "Responsive design"],
     },
