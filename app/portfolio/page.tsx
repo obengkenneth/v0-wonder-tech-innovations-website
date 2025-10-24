@@ -42,7 +42,7 @@ export default function Portfolio() {
       description: "Educational mobile app where students can learn courses, take quizzes, and participate in live interactive teaching sessions with teachers.",
       technologies: ["React Native", "WebRTC", "Firebase", "Real-time Chat"],
       image: "/study-agora.png",
-      url: "#",
+      // url: "Early access",
       results: ["Interactive learning", "Live sessions", "Quiz system"],
     },
     {
@@ -52,7 +52,7 @@ export default function Portfolio() {
       description: "Company website for a professional ushering agency. Customers can request quotes and learn about premium event services.",
       technologies: ["Next.js", "React", "Contact Forms", "Responsive Design"],
       image: "/smushering.png",
-      url: "#",
+      url: "https://smushering.vercel.app/",
       results: ["Quote request system", "Service showcase", "Professional branding"],
     },
   ]
