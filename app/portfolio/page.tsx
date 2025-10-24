@@ -1,62 +1,59 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Image from "next/image"
 import { ExternalLink } from "lucide-react"
 
 export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Heera Logistics Website",
       category: "Web Development",
-      description: "A full-featured e-commerce platform with payment integration, inventory management, and analytics.",
-      technologies: ["Next.js", "React", "Stripe", "PostgreSQL"],
-      image: "bg-gradient-to-br from-blue-500 to-blue-600",
-      results: ["40% increase in sales", "50K+ monthly users", "99.9% uptime"],
+      description: "Client-facing application for drivers and potential leads for a logistics company. Features vehicle financing, fleet tracking, and transparent payment systems.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      image: "/heera-web.png",
+      url: "https://heeralogistics.com/",
+      results: ["Professional client portal", "Lead generation system", "Responsive design"],
     },
     {
       id: 2,
-      title: "Mobile Fitness App",
+      title: "Heera Logistics Mobile App",
       category: "Mobile Development",
-      description: "A comprehensive fitness tracking app with workout plans, nutrition tracking, and social features.",
-      technologies: ["React Native", "Firebase", "Redux", "Expo"],
-      image: "bg-gradient-to-br from-green-500 to-green-600",
-      results: ["100K+ downloads", "4.8 star rating", "Daily active users: 25K"],
+      description: "Mobile app for drivers to make payments, track progress, and schedule vehicle inspections. Available on Google Play Store.",
+      technologies: ["React Native", "Firebase", "Payment Integration", "Push Notifications"],
+      image: "/heera-mobile.png",
+      url: "https://play.google.com/store/search?q=heera+logistics&c=apps&hl=en",
+      results: ["50+ downloads", "Payment tracking", "Vehicle inspection system"],
     },
     {
       id: 3,
-      title: "SaaS Dashboard",
+      title: "Heera Fleet Admin Portal",
       category: "Web Development",
-      description: "An enterprise-grade dashboard for data analytics with real-time updates and custom reporting.",
-      technologies: ["React", "TypeScript", "D3.js", "Node.js"],
-      image: "bg-gradient-to-br from-purple-500 to-purple-600",
-      results: ["500+ enterprise clients", "Real-time data processing", "Custom integrations"],
+      description: "Admin portal for company operations including fleet management, driver monitoring, and business analytics dashboard.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Real-time Analytics"],
+      image: "/heera-admin.png",
+      url: "https://fleet.heeralogistics.com/",
+      results: ["Fleet management system", "Real-time tracking", "Business analytics"],
     },
     {
       id: 4,
-      title: "Healthcare Portal",
-      category: "Web Development",
-      description: "A secure patient portal for appointment booking, medical records, and telemedicine consultations.",
-      technologies: ["Next.js", "HIPAA compliant", "PostgreSQL", "AWS"],
-      image: "bg-gradient-to-br from-red-500 to-red-600",
-      results: ["10K+ patients", "HIPAA certified", "98% patient satisfaction"],
+      title: "Study Agora - Educational Platform",
+      category: "Mobile Development",
+      description: "Educational mobile app where students can learn courses, take quizzes, and participate in live interactive teaching sessions with teachers.",
+      technologies: ["React Native", "WebRTC", "Firebase", "Real-time Chat"],
+      image: "/study-agora.png",
+      url: "#",
+      results: ["Interactive learning", "Live sessions", "Quiz system"],
     },
     {
       id: 5,
-      title: "AI Content Generator",
+      title: "S&M Ushering Agency",
       category: "Web Development",
-      description: "An AI-powered platform for generating marketing content, blog posts, and social media copy.",
-      technologies: ["Next.js", "OpenAI API", "Vercel", "Supabase"],
-      image: "bg-gradient-to-br from-yellow-500 to-yellow-600",
-      results: ["50K+ users", "1M+ content pieces generated", "Freemium model"],
-    },
-    {
-      id: 6,
-      title: "Real Estate App",
-      category: "Mobile Development",
-      description: "A mobile app for property listings with virtual tours, mortgage calculator, and agent messaging.",
-      technologies: ["Flutter", "Firebase", "Google Maps API", "Stripe"],
-      image: "bg-gradient-to-br from-orange-500 to-orange-600",
-      results: ["200K+ listings", "50K+ monthly active users", "15K+ transactions"],
+      description: "Company website for a professional ushering agency. Customers can request quotes and learn about premium event services.",
+      technologies: ["Next.js", "React", "Contact Forms", "Responsive Design"],
+      image: "/smushering.png",
+      url: "#",
+      results: ["Quote request system", "Service showcase", "Professional branding"],
     },
   ]
 
@@ -82,12 +79,21 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <div
+              <a
                 key={project.id}
-                className={`group bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg animate-fade-in-up animate-stagger-${(index % 6) + 1}`}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg animate-fade-in-up animate-stagger-${(index % 5) + 1} block`}
               >
                 {/* Project Image */}
-                <div className={`h-48 ${project.image} relative overflow-hidden`}>
+                <div className="h-48 relative overflow-hidden bg-gray-100">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-all">
                       <ExternalLink className="text-white" size={32} />
@@ -130,7 +136,7 @@ export default function Portfolio() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
