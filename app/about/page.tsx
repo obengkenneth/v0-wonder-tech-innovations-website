@@ -1,6 +1,7 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { CheckCircle2, Users, Lightbulb, Target } from "lucide-react"
+import Bubbles from "@/components/bubbles"
 
 export default function About() {
   const values = [
@@ -54,8 +55,9 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-background to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 bg-gradient-to-br from-background via-background to-accent/5">
+        <Bubbles />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance">
             About <span className="gradient-text">WonderTech Innovations</span>
           </h1>
@@ -128,7 +130,7 @@ export default function About() {
       {/* Our Values */}
       <section className="py-20 bg-card/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl font-bold mb-4">Our Core Values</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               These principles guide everything we do and how we work with our clients.
@@ -141,7 +143,9 @@ export default function About() {
               return (
                 <div
                   key={index}
-                  className="p-6 bg-background border border-border rounded-xl hover:border-primary transition-all"
+                  className="p-6 bg-background border border-border rounded-xl hover:border-primary transition-all card-hover"
+                  data-aos="zoom-in"
+                  data-aos-delay={`${index * 100 + 100}`}
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-4">
                     <Icon className="text-primary-foreground" size={24} />

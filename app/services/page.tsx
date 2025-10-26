@@ -2,6 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Image from "next/image"
 import { Zap, BarChart3, Lock, Headphones } from "lucide-react"
+import Bubbles from "@/components/bubbles"
 
 export default function Services() {
   const mainServices = [
@@ -64,12 +65,13 @@ export default function Services() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-background to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance">
+      <section className="relative py-20 bg-gradient-to-br from-background via-background to-accent/5">
+        <Bubbles />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance" data-aos="fade-up">
             Our <span className="gradient-text">Services</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance" data-aos="fade-up" data-aos-delay="200">
             Comprehensive solutions tailored to your business needs. From concept to deployment, we've got you covered.
           </p>
         </div>
@@ -82,8 +84,8 @@ export default function Services() {
             {mainServices.map((service, index) => {
               const isEven = index % 2 === 0
               return (
-                <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
-                  <div className={isEven ? "order-1" : "order-2"}>
+                <div key={index} className="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up" data-aos-delay={`${index * 200 + 100}`}>
+                  <div className={`${isEven ? "order-1" : "order-2"}`}>
                     <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
                     <p className="text-lg text-muted-foreground mb-6">{service.description}</p>
                     <div className="space-y-3">
@@ -100,7 +102,7 @@ export default function Services() {
                   </div>
                   <div className={`relative ${isEven ? "order-2" : "order-1"}`}>
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl blur-2xl"></div>
-                    <div className="relative bg-card border border-border rounded-2xl p-8 h-80 flex items-center justify-center">
+                    <div className="relative bg-card border border-border rounded-2xl p-8 h-80 flex items-center justify-center card-hover">
                       <div className="relative w-full h-full">
                         <Image
                           src={service.image}
@@ -151,7 +153,7 @@ export default function Services() {
       {/* Process Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl font-bold mb-4">Our Process</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A structured approach to delivering exceptional results.
@@ -165,8 +167,8 @@ export default function Services() {
               { step: "03", title: "Development", description: "We build your solution with precision and care." },
               { step: "04", title: "Launch", description: "We deploy and support your success." },
             ].map((item, index) => (
-              <div key={index} className="relative">
-                <div className="bg-card border border-border rounded-xl p-6 text-center">
+              <div key={index} className="relative" data-aos="fade-down" data-aos-delay={`${index * 400 + 500}`} data-aos-duration="1000">
+                <div className="bg-card border border-border rounded-xl p-6 text-center card-hover">
                   <div className="text-4xl font-bold text-primary mb-4">{item.step}</div>
                   <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground text-sm">{item.description}</p>

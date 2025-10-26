@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-primary-foreground">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -20,10 +20,10 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-bold">WonderTech</p>
-                <p className="text-xs text-primary-foreground/70">Innovations</p>
+                <p className="text-xs text-white/70">Innovations</p>
               </div>
             </div>
-            <p className="text-primary-foreground/70 text-sm">
+            <p className="text-white/70 text-sm">
               Empowering businesses through innovative software solutions.
             </p>
           </div>
@@ -33,14 +33,14 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link href="/" className="text-white/70 hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   href="/about"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   About Us
                 </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Services
                 </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/portfolio"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   Portfolio
                 </Link>
@@ -69,22 +69,22 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <a href="#" className="text-white/70 hover:text-white transition-colors">
                   Web Development
                 </a>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <a href="#" className="text-white/70 hover:text-white transition-colors">
                   Mobile Apps
                 </a>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <a href="#" className="text-white/70 hover:text-white transition-colors">
                   UI/UX Design
                 </a>
               </li>
               <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <a href="#" className="text-white/70 hover:text-white transition-colors">
                   IT Consulting
                 </a>
               </li>
@@ -99,7 +99,7 @@ export default function Footer() {
                 <Mail size={16} />
                 <a
                   href="mailto:wondertechinnovations@gmail.com"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   wondertechinnovations@gmail.com
                 </a>
@@ -108,32 +108,32 @@ export default function Footer() {
                 <Phone size={16} />
                 <a
                   href="tel:+233594159131"
-                  className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   +233 (0) 594159131
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={16} />
-                <span className="text-primary-foreground/70">Accra, Ghana</span>
+                <span className="text-white/70">Accra, Ghana</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Social Links */}
-        <div className="border-t border-primary-foreground/20 pt-8 flex flex-col sm:flex-row items-center justify-between">
-          <p className="text-sm text-primary-foreground/70">
+        <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row items-center justify-between">
+          <p className="text-sm text-white/70">
             © {new Date().getFullYear()} WonderTech Innovations. All rights reserved.
           </p>
           {/* <div className="flex gap-4 mt-4 sm:mt-0">
-            <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="#" className="text-white/70 hover:text-white transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="#" className="text-white/70 hover:text-white transition-colors">
               <Twitter size={20} />
             </a>
-            <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+            <a href="#" className="text-white/70 hover:text-white transition-colors">
               <Github size={20} />
             </a>
           </div> */}

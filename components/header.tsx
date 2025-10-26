@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import ThemeToggle from "./theme-toggle"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,7 +28,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <Link href="/" className="text-foreground hover:text-primary transition-colors">
             Home
           </Link>
@@ -40,6 +41,7 @@ export default function Header() {
           <Link href="/portfolio" className="text-foreground hover:text-primary transition-colors">
             Portfolio
           </Link>
+          <ThemeToggle />
           <Link
             href="/contact"
             className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
@@ -69,6 +71,10 @@ export default function Header() {
               <Link href="/portfolio" className="text-foreground hover:text-primary transition-colors">
                 Portfolio
               </Link>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Theme:</span>
+                <ThemeToggle />
+              </div>
               <Link
                 href="/contact"
                 className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-center"

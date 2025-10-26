@@ -1,4 +1,7 @@
+"use client"
+
 import { Star } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const testimonials = [
   {
@@ -22,32 +25,53 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  // Auto-play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
+    }, 5000) // Change slide every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">What Our Clients Say</h2>
           <p className="text-xl text-muted-foreground">Trusted by businesses across Ghana and beyond</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`p-8 bg-card border border-border rounded-xl hover:shadow-lg transition-all animate-fade-in-up animate-stagger-${index + 1}`}
+        {/* Carousel Container */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Testimonial Cards */}
+          <div className="overflow-hidden rounded-xl">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="text-foreground mb-6 italic">"{testimonial.text}"</p>
-              <div>
-                <p className="font-semibold">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-              </div>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <div className="p-8 bg-card border border-border rounded-xl shadow-lg">
+                    <div className="flex gap-1 mb-4 justify-center">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} size={20} className="fill-accent text-accent" />
+                      ))}
+                    </div>
+                    <p className="text-foreground mb-6 italic text-center text-lg leading-relaxed">
+                      "{testimonial.text}"
+                    </p>
+                    <div className="text-center">
+                      <p className="font-semibold text-lg">{testimonial.name}</p>
+                      <p className="text-muted-foreground">{testimonial.company}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

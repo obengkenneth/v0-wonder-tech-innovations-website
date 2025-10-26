@@ -2,6 +2,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Image from "next/image"
 import { ExternalLink } from "lucide-react"
+import Bubbles from "@/components/bubbles"
 
 export default function Portfolio() {
   const projects = [
@@ -10,7 +11,7 @@ export default function Portfolio() {
       title: "Heera Logistics Website",
       category: "Web Development",
       description: "Client-facing application for drivers and potential leads for a logistics company. Features vehicle financing, fleet tracking, and transparent payment systems.",
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      // technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
       image: "/heera-web.png" ,
       url: "https://heeralogistics.com/",
       results: ["Professional client portal", "Lead generation system", "Responsive design"],
@@ -20,7 +21,7 @@ export default function Portfolio() {
       title: "Heera Logistics Mobile App",
       category: "Mobile Development",
       description: "Mobile app for drivers to make payments, track progress, and schedule vehicle inspections. Available on Google Play Store.",
-      technologies: ["React Native", "Firebase", "Payment Integration", "Push Notifications"],
+      // technologies: ["React Native", "Firebase", "Payment Integration", "Push Notifications"],
       image: "/heera-mobile.png",
       url: "https://play.google.com/store/search?q=heera+logistics&c=apps&hl=en",
       results: ["50+ downloads", "Payment tracking", "Vehicle inspection system"],
@@ -30,7 +31,7 @@ export default function Portfolio() {
       title: "Heera Fleet Admin Portal",
       category: "Web Development",
       description: "Admin portal for company operations including fleet management, driver monitoring, and business analytics dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Real-time Analytics"],
+      // technologies: ["React", "Node.js", "PostgreSQL", "Real-time Analytics"],
       image: "/heera-admin.png",
       url: "https://fleet.heeralogistics.com/",
       results: ["Fleet management system", "Real-time tracking", "Business analytics"],
@@ -40,7 +41,7 @@ export default function Portfolio() {
       title: "Study Agora - Educational Platform",
       category: "Mobile Development",
       description: "Educational mobile app where students can learn courses, take quizzes, and participate in live interactive teaching sessions with teachers.",
-      technologies: ["React Native", "WebRTC", "Firebase", "Real-time Chat"],
+      // technologies: ["React Native", "WebRTC", "Firebase", "Real-time Chat"],
       image: "/study-agora.png",
       // url: "Early access",
       results: ["Interactive learning", "Live sessions", "Quiz system"],
@@ -50,7 +51,7 @@ export default function Portfolio() {
       title: "S&M Ushering Agency",
       category: "Web Development",
       description: "Company website for a professional ushering agency. Customers can request quotes and learn about premium event services.",
-      technologies: ["Next.js", "React", "Contact Forms", "Responsive Design"],
+      // technologies: ["Next.js", "React", "Contact Forms", "Responsive Design"],
       image: "/smushering.png",
       url: "https://smushering.vercel.app/",
       results: ["Quote request system", "Service showcase", "Professional branding"],
@@ -62,12 +63,13 @@ export default function Portfolio() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-background to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance">
+      <section className="relative py-20 bg-gradient-to-br from-background via-background to-accent/5">
+        <Bubbles />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance" data-aos="fade-up">
             Our <span className="gradient-text">Portfolio</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance" data-aos="fade-up" data-aos-delay="200">
             Explore our latest projects and see how we've helped businesses transform through innovative technology
             solutions.
           </p>
@@ -84,7 +86,9 @@ export default function Portfolio() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg animate-fade-in-up animate-stagger-${(index % 5) + 1} block`}
+                className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg card-hover block"
+                data-aos="fade-up"
+                data-aos-delay={`${(index % 5) * 100 + 100}`}
               >
                 {/* Project Image */}
                 <div className="h-48 relative overflow-hidden bg-gray-100">
@@ -113,13 +117,13 @@ export default function Portfolio() {
 
                   {/* Technologies */}
                   <div className="mb-4">
-                    <p className="text-xs font-semibold text-foreground mb-2">Technologies:</p>
+                    {/* <p className="text-xs font-semibold text-foreground mb-2">Technologies:</p> */}
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, idx) => (
+                      {/* {project.technologies.map((tech, idx) => (
                         <span key={idx} className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded">
                           {tech}
                         </span>
-                      ))}
+                      ))} */}
                     </div>
                   </div>
 
@@ -143,7 +147,7 @@ export default function Portfolio() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-primary to-accent">
+      <section className="py-16 bg-gradient-to-r from-primary to-accent dark:bg-gradient-to-r dark:from-slate-800 dark:to-slate-900 dark:border-t dark:border-slate-700 dark:border-b dark:border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -153,8 +157,8 @@ export default function Portfolio() {
               { label: "Years Experience", value: "3+" },
             ].map((stat, index) => (
               <div key={index} className={`text-center animate-fade-in-up animate-stagger-${index + 1}`}>
-                <p className="text-4xl sm:text-5xl font-bold text-primary-foreground mb-2">{stat.value}</p>
-                <p className="text-primary-foreground/80">{stat.label}</p>
+                <p className="text-4xl sm:text-5xl font-bold text-primary-foreground dark:text-white mb-2">{stat.value}</p>
+                <p className="text-primary-foreground/80 dark:text-white/80">{stat.label}</p>
               </div>
             ))}
           </div>

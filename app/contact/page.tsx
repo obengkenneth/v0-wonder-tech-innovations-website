@@ -6,6 +6,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import { useState } from "react"
+import Bubbles from "@/components/bubbles"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -89,8 +90,9 @@ export default function Contact() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-background to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 bg-gradient-to-br from-background via-background to-accent/5">
+        <Bubbles />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-balance">
             Get In <span className="gradient-text">Touch</span>
           </h1>
@@ -260,7 +262,7 @@ export default function Contact() {
               {
                 question: "What is your typical project timeline?",
                 answer:
-                  "Project timelines vary based on complexity and scope. Most projects take between 2-6 months. We'll provide a detailed timeline during the discovery phase.",
+                  "Project timelines vary based on complexity and scope. Most projects take between 3-20 working days. We'll provide a detailed timeline during the discovery phase.",
               },
               {
                 question: "Do you offer ongoing support after launch?",
