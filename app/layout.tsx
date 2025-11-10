@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import ScrollAnimations from "@/components/scroll-animations"
 import AOSProvider from "@/components/aos-provider"
 import { ThemeProvider } from "@/components/theme-provider"
+import WhatsAppWidget from "@/components/whatsapp-widget"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -52,6 +53,7 @@ export default function RootLayout({
           {children}
           <AOSProvider />
           <ScrollAnimations />
+          <WhatsAppWidget />
           <Analytics />
         </ThemeProvider>
       </body>
