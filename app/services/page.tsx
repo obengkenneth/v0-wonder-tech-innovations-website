@@ -1,8 +1,15 @@
+import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Image from "next/image"
 import { Zap, BarChart3, Lock, Headphones } from "lucide-react"
 import Bubbles from "@/components/bubbles"
+
+export const metadata: Metadata = {
+  title: "Our Services | Web & Mobile Development | WonderTech Innovations",
+  description:
+    "Custom web development, mobile app development, UI/UX design, and IT consulting in Ghana. From concept to deployment, we deliver scalable software solutions.",
+}
 
 export default function Services() {
   const mainServices = [

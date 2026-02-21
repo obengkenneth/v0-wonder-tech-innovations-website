@@ -19,11 +19,21 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://wondertechinnovations.com"
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "WonderTech Innovations | Software Development Solutions",
   description:
-    "Empowering businesses through innovative software solutions. Custom web & mobile app development, UI/UX design, and IT consulting.",
-  generator: "v0.app",
+    "Custom web and mobile app development, UI/UX design, and IT consulting in Accra, Ghana. Empowering businesses through innovative software solutions. Get a quote for your next project.",
+  keywords: [
+    "software development Ghana",
+    "web development",
+    "mobile app development",
+    "IT consulting",
+    "UI UX design",
+    "Accra",
+  ],
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
@@ -34,6 +44,47 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
   ],
+  openGraph: {
+    type: "website",
+    locale: "en_GH",
+    url: baseUrl,
+    siteName: "WonderTech Innovations",
+    title: "WonderTech Innovations | Software Development Solutions",
+    description:
+      "Custom web and mobile app development, UI/UX design, and IT consulting in Accra, Ghana. Get a quote for your next project.",
+    images: [
+      {
+        url: "/wondertech-logo.jpeg",
+        width: 800,
+        height: 800,
+        alt: "WonderTech Innovations Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WonderTech Innovations | Software Development Solutions",
+    description:
+      "Custom web and mobile app development, UI/UX design, and IT consulting in Accra, Ghana. Get a quote for your next project.",
+    images: ["/wondertech-logo.jpeg"],
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "WonderTech Innovations",
+  url: baseUrl,
+  logo: `${baseUrl}/wondertech-logo.jpeg`,
+  description:
+    "Custom web and mobile app development, UI/UX design, and IT consulting in Accra, Ghana.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Accra",
+    addressCountry: "GH",
+  },
+  email: "wondertechinnovations@gmail.com",
+  telephone: "+233594159131",
 }
 
 export default function RootLayout({
@@ -43,6 +94,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${poppins.variable} ${inter.variable} font-sans antialiased bg-background text-foreground transition-colors duration-200`}>
         <ThemeProvider
           attribute="class"

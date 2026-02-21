@@ -1,8 +1,15 @@
+import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Image from "next/image"
 import { ExternalLink } from "lucide-react"
 import Bubbles from "@/components/bubbles"
+
+export const metadata: Metadata = {
+  title: "Our Portfolio | Software Projects | WonderTech Innovations",
+  description:
+    "Explore our software projects: logistics platforms, mobile apps, educational portals, and more. Delivered for clients across Ghana and beyond.",
+}
 
 export default function Portfolio() {
   const projects = [

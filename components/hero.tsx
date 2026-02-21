@@ -30,9 +30,12 @@ export default function Hero() {
           Empowering Businesses Through <span className="gradient-text">Innovative Software Solutions</span>
         </h1>
 
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance" data-aos="fade-up" data-aos-delay="300">
+        <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto text-balance" data-aos="fade-up" data-aos-delay="300">
           Transform your vision into reality with cutting-edge technology and expert development. We build solutions
           that drive growth and innovation.
+        </p>
+        <p className="text-sm text-muted-foreground/90 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+          Software development services in Accra, Ghana — web, mobile, and IT consulting for businesses.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12" data-aos="fade-up" data-aos-delay="400">

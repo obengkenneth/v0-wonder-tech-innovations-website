@@ -1,7 +1,14 @@
+import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { CheckCircle2, Users, Lightbulb, Target } from "lucide-react"
 import Bubbles from "@/components/bubbles"
+
+export const metadata: Metadata = {
+  title: "About Us | WonderTech Innovations",
+  description:
+    "WonderTech Innovations is a software development company in Accra, Ghana. We build web and mobile apps, design UI/UX, and provide IT consulting for businesses.",
+}
 
 export default function About() {
   const values = [
