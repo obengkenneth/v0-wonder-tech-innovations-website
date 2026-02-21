@@ -24,7 +24,7 @@ export default function Portfolio() {
       // technologies: ["React Native", "Firebase", "Payment Integration", "Push Notifications"],
       image: "/heera-mobile.png",
       url: "https://play.google.com/store/search?q=heera+logistics&c=apps&hl=en",
-      results: ["50+ downloads", "Payment tracking", "Vehicle inspection system"],
+      results: ["100+ downloads", "Payment tracking", "Vehicle inspection system"],
     },
     {
       id: 3,
@@ -55,6 +55,15 @@ export default function Portfolio() {
       image: "/smushering.png",
       url: "https://smushering.vercel.app/",
       results: ["Quote request system", "Service showcase", "Professional branding"],
+    },
+    {
+      id: 6,
+      title: "Nursing Exam Portal - MUG Skills Lab",
+      category: "Web Development",
+      description: "Exam portal for Methodist University Ghana Tema where nursing students take objective-style practice questions. Admin dashboard for creating tests, setting questions, and managing student accounts.",
+      image: "/methodist.png",
+      url: "https://www.mugskillslab.com/",
+      results: ["Question navigator", "Flag questions", "Instant scoring", "Downloadable reports", "Admin dashboard"],
     },
   ]
 
